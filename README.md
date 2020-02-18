@@ -2,6 +2,7 @@
 A special repository that detects news cycle related price action !
 
 Initial work will be loosely based on the following mvp-framework : 
+
 	- Scrap news sites for positive articles using selenium/scrappy or similar in the last 3 hrs
 	- Search for highly positive trends in the past three hours using yfincance(?)
 		https://towardsdatascience.com/how-to-get-stock-data-using-python-c0de1df17e75
