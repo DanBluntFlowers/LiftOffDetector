@@ -1,24 +1,26 @@
 class Report:
     # Initializer / Instance Attributes
-    def __init__(self, size, matches, companies, stories):
-        self.size = size
-        self.matches = matches
+    def __init__(self, companies, stories):
         self.companies = companies
         self.stories = stories
 
-
+    @staticmethod
     def create_report(self):
-        #scrap the stories for all companies
+        print('function not yet written')
+        # scrap the stories for all companies
         # store in a report
 
-
+    @staticmethod
     def store_report(self):
-        #store the report in the chosen repository
+        print('function not yet written')
+        # store the report in the chosen repository
 
-
+    @staticmethod
     def print_quick_report(self):
-        #print a summary of the report as a structured pandas dataframe
+        print('function not yet written')
+        # print a summary of the report as a structured pandas dataframe
 
-
+    @staticmethod
     def store_quick_report(self):
-        #store the quick report for later viewing
+        print('function not yet written')
+        # store the quick report for later viewing
