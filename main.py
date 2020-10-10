@@ -1,23 +1,13 @@
-from Company import *
-from Scrapper import *
-from  Report import *
+from Report import *
+from datetime import date
 
-list_of_companies = ['Airbus', 'Orange', 'Moderna', 'Fermentalg', 'Tesla', 'Total']
-list_of_trends = ['up', 'up', 'up', 'down', 'down']
+today = date.today()
 
-companies = []
-for i in range(len(list_of_companies)):
-    companies += [Company(company=list_of_companies[i], trend=list_of_trends[i])]
 
-story_packs = []
-# Two latest stories for each company in list of companies
-for i in companies:
-    scrapper = Scrapper(i)
-    Story1, Story2 = scrapper.get_stories()
-    story_packs += [Story1, Story2]
-
-report = Report(companies)
-report.create_report()
-report.store_report()
+report = Report(today)
+story_packs = report.create_report()
+report.store_report(story_packs)
 report.store_quick_report()
-report.print_report()
+report.print_quick_report()
+
+driver.close()
