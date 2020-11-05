@@ -1,0 +1,9 @@
+*.pdf
+*.PDF
+*.xml
+*.db
+*.tar.gz
+*.pyc
+*.ipynb
+
+
