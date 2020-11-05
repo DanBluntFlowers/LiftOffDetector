@@ -3,17 +3,6 @@ COPY . /opt/app
 WORKDIR /opt/app
 USER root
 
-# install Java
-#RUN echo "deb http://security.debian.org/debian-security stretch/updates main" >> /etc/apt/sources.list                                                   
-#RUN mkdir -p /usr/share/man/man1 && \
-#    apt-get update -y && \
-#    apt-get install -y openjdk-8-jdk
-
-#RUN apt-get install unzip -y && \
-#    apt-get autoremove -y
-
-
-# Setup dependencies for pyodbc
 RUN \
   export ACCEPT_EULA='Y' && \
   export MYSQL_CONNECTOR='mysql-connector-odbc-8.0.18-linux-glibc2.12-x86-64bit' && \
@@ -56,30 +45,6 @@ RUN \
   rm -rf ${MYSQL_CONNECTOR}* && \
   apt-get remove -y curl apt-transport-https debconf-utils g++ gcc rsync unixodbc-dev build-essential gnupg2 && \
   apt-get autoremove -y && apt-get autoclean -y
-
-#RUN update-ca-certificates -f \
-#  && apt-get update \
-#  && apt-get upgrade -y \
-#  && apt-get install -y \
-#    wget \
-#    git \
-#    libatlas3-base \
-#    libopenblas-base \
-#  && apt-get clean
-
-# Java
-#RUN cd /opt/ \
-#    && wget \
-#	--no-cookies \
-#	--no-check-certificate \
-#	--header "Cookie: oraclelicense=accept-securebackup-cookie" \
-#	"https://javadl.oracle.com/webapps/download/AutoDL?BundleId=242980_a4634525489241b9a9e1aa73d9e118e6" \
-#	-O jdk-8.tar.gz \
-#    && tar xzf jdk-8.tar.gz \
-#    && rm jdk-8.tar.gz \
-#    && update-alternatives --install /usr/bin/java java /opt/jdk1.8.0_151/bin/java 100 \
-#    && update-alternatives --install /usr/bin/jar jar /opt/jdk1.8.0_151/bin/jar 100 \
-#    && update-alternatives --install /usr/bin/javac javac /opt/jdk1.8.0_151/bin/javac 100
 
 
 # Airflow
